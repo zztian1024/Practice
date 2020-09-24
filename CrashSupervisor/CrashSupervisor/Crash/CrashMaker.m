@@ -16,7 +16,9 @@
 }
 
 + (void)signalCrash {
-
+    void *signal = malloc(1024);
+    free(signal);
+    free(signal);
 }
 
 @end

@@ -11,6 +11,7 @@
 
 static NSUncaughtExceptionHandler *myExceptionHandler;
 static NSUncaughtExceptionHandler *oldhandler;
+static BOOL dismissed;
 
 @implementation CrashTracker
 
@@ -31,6 +32,22 @@ static NSUncaughtExceptionHandler *oldhandler;
     signal(SIGFPE, SignalExceptionHandler);
     signal(SIGBUS, SignalExceptionHandler);
     signal(SIGPIPE, SignalExceptionHandler);
+}
+
++ (void)handleException:(NSException *)exception {
+    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+    CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"---------upload--------");
+        dismissed = YES;
+    });
+    
+    while (!dismissed) {
+        for (NSString *mode in (__bridge NSArray *)allModes) {
+            CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
+        }
+    }
+    NSLog(@"---------done--------");
 }
 
 #pragma mark - Internal
@@ -77,7 +94,7 @@ void UncaughtExceptionHandler(NSException *exception) {
         @"callStackSymbols": exceptionInfo,
     };
     
-    NSLog(@"%@", fullInfo);
+    [CrashTracker performSelector:@selector(handleException:) withObject:fullInfo];
     
     if(oldhandler) {
         oldhandler(exception);
