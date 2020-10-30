@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, nonatomic, copy, readonly) NSString *name;
 @property (class, nonatomic, copy, null_resettable) NSString *APIVersion;
+@property (class, nonatomic, strong) NSNumber *JPEGCompressionQuality;
 
 @end
 

@@ -15,6 +15,8 @@ int main(int argc, const char * argv[]) {
         
         [Setting setAPIVersion:@"1.2.3"];
         NSLog(@"%@ - %@", [Setting name], [Setting APIVersion]);
+        [Setting setJPEGCompressionQuality:@0.8];
+        NSLog(@"%@", [Setting JPEGCompressionQuality]);
     }
     return 0;
 }
