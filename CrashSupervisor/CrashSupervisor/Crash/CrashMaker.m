@@ -16,9 +16,8 @@
 }
 
 + (void)signalCrash {
-    void *signal = malloc(1024);
-    free(signal);
-    free(signal);
+    int a = 10; // pro hand -p true -s false SIGABRT
+    free(a);
 }
 
 @end

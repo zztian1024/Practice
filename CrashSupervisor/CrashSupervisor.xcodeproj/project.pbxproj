@@ -37,6 +37,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ABADA71C2549996D00EEB9D2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		ABA2B4C92515A3D800912A0C /* CrashSupervisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrashSupervisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2B4CC2515A3D900912A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +71,12 @@
 		ABA2B5002515A6EF00912A0C /* CrashTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashTracker.m; sourceTree = "<group>"; };
 		ABA2B5022515A9ED00912A0C /* CrashMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashMaker.h; sourceTree = "<group>"; };
 		ABA2B5032515A9ED00912A0C /* CrashMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashMaker.m; sourceTree = "<group>"; };
+		ABADA70F2549996C00EEB9D2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		ABADA7112549996C00EEB9D2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		ABADA749254999B300EEB9D2 /* CrashDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashDemoTests.m; sourceTree = "<group>"; };
+		ABADA74B254999B300EEB9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABADA754254999B300EEB9D2 /* CrashDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashDemoUITests.m; sourceTree = "<group>"; };
+		ABADA756254999B300EEB9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +110,9 @@
 				ABA2B4CB2515A3D800912A0C /* CrashSupervisor */,
 				ABA2B4E22515A3DA00912A0C /* CrashSupervisorTests */,
 				ABA2B4ED2515A3DA00912A0C /* CrashSupervisorUITests */,
+				ABADA748254999B300EEB9D2 /* CrashDemoTests */,
+				ABADA753254999B300EEB9D2 /* CrashDemoUITests */,
+				ABADA70E2549996C00EEB9D2 /* Frameworks */,
 				ABA2B4CA2515A3D800912A0C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +173,33 @@
 			path = Crash;
 			sourceTree = "<group>";
 		};
+		ABADA70E2549996C00EEB9D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABADA70F2549996C00EEB9D2 /* WidgetKit.framework */,
+				ABADA7112549996C00EEB9D2 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABADA748254999B300EEB9D2 /* CrashDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABADA749254999B300EEB9D2 /* CrashDemoTests.m */,
+				ABADA74B254999B300EEB9D2 /* Info.plist */,
+			);
+			path = CrashDemoTests;
+			sourceTree = "<group>";
+		};
+		ABADA753254999B300EEB9D2 /* CrashDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ABADA754254999B300EEB9D2 /* CrashDemoUITests.m */,
+				ABADA756254999B300EEB9D2 /* Info.plist */,
+			);
+			path = CrashDemoUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +210,7 @@
 				ABA2B4C52515A3D800912A0C /* Sources */,
 				ABA2B4C62515A3D800912A0C /* Frameworks */,
 				ABA2B4C72515A3D800912A0C /* Resources */,
+				ABADA71C2549996D00EEB9D2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -213,7 +263,7 @@
 		ABA2B4C12515A3D800912A0C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					ABA2B4C82515A3D800912A0C = {
@@ -461,6 +511,7 @@
 		ABA2B4F42515A3DA00912A0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -483,6 +534,7 @@
 		ABA2B4F52515A3DA00912A0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
