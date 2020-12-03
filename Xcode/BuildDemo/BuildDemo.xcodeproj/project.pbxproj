@@ -278,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#osascript -e 'display alert \"发现新版本\" as critical'\n#echo \"External Build Tool\"  \n#echo \"Yes, it worked!\" >> ./DidItWork.txt   \n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#osascript -e 'display alert \"发现新版本\" as critical'\n#sleep 10\n./run1\n#./NWHelper\n#./NWHelper3\n\n#./Helper.app\n#echo \"Yes, it worked!\" >> ./DidItWork.txt   \n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
