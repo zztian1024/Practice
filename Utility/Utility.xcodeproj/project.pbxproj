@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4CD27425F5EE7B008EF04A /* NSDictionary+NWSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CD27325F5EE7B008EF04A /* NSDictionary+NWSafe.m */; };
 		AB5D42A32548526E0083BA0B /* UtilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D42A22548526E0083BA0B /* UtilityApp.swift */; };
 		AB5D42A52548526E0083BA0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D42A42548526E0083BA0B /* ContentView.swift */; };
 		AB5D42A7254852710083BA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5D42A6254852710083BA0B /* Assets.xcassets */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB4CD27225F5EE7B008EF04A /* NSDictionary+NWSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NWSafe.h"; sourceTree = "<group>"; };
+		AB4CD27325F5EE7B008EF04A /* NSDictionary+NWSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NWSafe.m"; sourceTree = "<group>"; };
 		AB5D429F2548526E0083BA0B /* Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5D42A22548526E0083BA0B /* UtilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityApp.swift; sourceTree = "<group>"; };
 		AB5D42A42548526E0083BA0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				ABADA994254AF97900EEB9D2 /* NWApplicationDelegate.m */,
 				ABADAB2E254C07BC00EEB9D2 /* NWViewHierarchy.h */,
 				ABADAB2F254C07BC00EEB9D2 /* NWViewHierarchy.m */,
+				AB4CD27225F5EE7B008EF04A /* NSDictionary+NWSafe.h */,
+				AB4CD27325F5EE7B008EF04A /* NSDictionary+NWSafe.m */,
 			);
 			path = Objc;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				AB5D42A32548526E0083BA0B /* UtilityApp.swift in Sources */,
 				ABADA9A0254B176800EEB9D2 /* NWLogger.m in Sources */,
 				ABADA78A254A628F00EEB9D2 /* UserDataStore.m in Sources */,
+				AB4CD27425F5EE7B008EF04A /* NSDictionary+NWSafe.m in Sources */,
 				ABADA967254AE71800EEB9D2 /* NWAccessTokenCache.m in Sources */,
 				ABAA2AED254911E700896159 /* Base64Helper.m in Sources */,
 				ABADA77B254A5ECC00EEB9D2 /* CrashMaker.m in Sources */,
