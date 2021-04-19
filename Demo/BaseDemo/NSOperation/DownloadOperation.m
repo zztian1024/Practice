@@ -34,45 +34,63 @@
 - (void)main {
     
     // 支持取消的 Operation
-    if(self.isCancelled){
-        return;
-    }
-    
-    sleep(5);
-    NSLog(@"%s ---%@", __func__, [NSThread currentThread]); // 打印当前线程
-    
+//    if(self.isCancelled){
+//        return;
+//    }
+//
+//    sleep(5);
+//    NSLog(@"%s ---%@", __func__, [NSThread currentThread]); // 打印当前线程
+//
+
+    NSURL *url = [NSURL URLWithString:self.url];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *imgae = [UIImage imageWithData:data];
+    NSLog(@"--%@--",[NSThread currentThread]);
     // set state
-    self.executing = NO;
-    self.finished = YES;
+//    self.executing = NO;
+//    self.finished = YES;
     NSLog(@"Finish executing %@", NSStringFromSelector(_cmd));
+    
+    // 图片下载完毕后，通知代理
+    if ([self.delegate respondsToSelector:@selector(downloadOperation:didFishedDownLoad:)]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate downloadOperation:self didFishedDownLoad:imgae];
+        });
+    }
 }
 
 // Operation 入口
+/**
 - (void)start {
     
     // 无需 call super
     // [super start];
     
-    if (self.isCancelled) {
-        self.finished = YES;
+//    if (self.isCancelled) {
+//        self.finished = YES;
+//        return;
+//    }
+//
+//    [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
+//    self.executing = YES;
+    // Always check for cancellation before launching the task.
+    
+    
+    if ([self isCancelled]) {
+        // Must move the operation to the finished state if it is canceled.
+        [self willChangeValueForKey:@"isFinished"];
+        _finished = YES;
+        [self didChangeValueForKey:@"isFinished"];
         return;
     }
 
-    [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
-    self.executing = YES;
-}
-
-- (void)setFinished:(BOOL)finished {
-//    [self willChangeValueForKey:@"isFinished"];
-    _finished = finished;
-//    [self didChangeValueForKey:@"isFinished"];
-}
-
-- (void)setExecuting:(BOOL)executing {
+    // If the operation is not canceled, begin executing the task.
 //    [self willChangeValueForKey:@"isExecuting"];
-    _executing = executing;
+    [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
+//    _executing = YES;
 //    [self didChangeValueForKey:@"isExecuting"];
 }
+ */
 
 - (void)dealloc {
     NSLog(@"%s", __func__);

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)invocationTest;
 - (void)downloadOptTest;
 - (void)operationQueueTest;
+- (void)operationQueueSuspending;
 @end
 
 NS_ASSUME_NONNULL_END

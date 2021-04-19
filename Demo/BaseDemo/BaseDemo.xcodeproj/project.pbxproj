@@ -36,6 +36,9 @@
 		AB712EB92548479100DAEA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB712EB82548479100DAEA37 /* main.m */; };
 		AB712EC4254847A500DAEA37 /* SyncMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AB712EC3254847A500DAEA37 /* SyncMutableDictionary.m */; };
 		AB712ED125484CA500DAEA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB712ED025484CA500DAEA37 /* main.m */; };
+		AB8C2DBF262D6C8D00790235 /* ImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */; };
+		AB8C2DCD262D6F3B00790235 /* ImageAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DCC262D6F3B00790235 /* ImageAssets.m */; };
+		AB8C2DDA262D6FD200790235 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8C2DD9262D6FD200790235 /* images.plist */; };
 		ABADAB19254BFB6100EEB9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABADAB18254BFB6100EEB9D2 /* main.m */; };
 		ABADAB26254BFB7A00EEB9D2 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = ABADAB25254BFB7A00EEB9D2 /* Setting.m */; };
 		ABBBC7092578D5FE00461380 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBBC7082578D5FE00461380 /* AppDelegate.m */; };
@@ -172,6 +175,11 @@
 		AB712EC3254847A500DAEA37 /* SyncMutableDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SyncMutableDictionary.m; sourceTree = "<group>"; };
 		AB712ECE25484CA500DAEA37 /* NSThread */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NSThread; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB712ED025484CA500DAEA37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB8C2DBD262D6C8D00790235 /* ImageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageListViewController.h; sourceTree = "<group>"; };
+		AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageListViewController.m; sourceTree = "<group>"; };
+		AB8C2DCB262D6F3B00790235 /* ImageAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAssets.h; sourceTree = "<group>"; };
+		AB8C2DCC262D6F3B00790235 /* ImageAssets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageAssets.m; sourceTree = "<group>"; };
+		AB8C2DD9262D6FD200790235 /* images.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
 		ABADAB16254BFB6100EEB9D2 /* Property */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Property; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABADAB18254BFB6100EEB9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABADAB24254BFB7A00EEB9D2 /* Setting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
@@ -328,10 +336,15 @@
 				AB67671E2628569A00065726 /* SceneDelegate.m */,
 				AB6767202628569A00065726 /* ViewController.h */,
 				AB6767212628569A00065726 /* ViewController.m */,
-				AB67673C2629639200065726 /* OperationTest.h */,
-				AB67673D2629639200065726 /* OperationTest.m */,
+				AB8C2DBD262D6C8D00790235 /* ImageListViewController.h */,
+				AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */,
+				AB8C2DCB262D6F3B00790235 /* ImageAssets.h */,
+				AB8C2DCC262D6F3B00790235 /* ImageAssets.m */,
 				AB67674A262997EB00065726 /* DownloadOperation.h */,
 				AB67674B262997EB00065726 /* DownloadOperation.m */,
+				AB8C2DD9262D6FD200790235 /* images.plist */,
+				AB67673C2629639200065726 /* OperationTest.h */,
+				AB67673D2629639200065726 /* OperationTest.m */,
 				AB6767232628569A00065726 /* Main.storyboard */,
 				AB6767262628569D00065726 /* Assets.xcassets */,
 				AB6767282628569D00065726 /* LaunchScreen.storyboard */,
@@ -752,6 +765,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8C2DDA262D6FD200790235 /* images.plist in Resources */,
 				AB67672A2628569E00065726 /* LaunchScreen.storyboard in Resources */,
 				AB6767272628569D00065726 /* Assets.xcassets in Resources */,
 				AB6767252628569A00065726 /* Main.storyboard in Resources */,
@@ -802,6 +816,8 @@
 				AB67671C2628569A00065726 /* AppDelegate.m in Sources */,
 				AB67672D2628569E00065726 /* main.m in Sources */,
 				AB67673E2629639200065726 /* OperationTest.m in Sources */,
+				AB8C2DBF262D6C8D00790235 /* ImageListViewController.m in Sources */,
+				AB8C2DCD262D6F3B00790235 /* ImageAssets.m in Sources */,
 				AB67671F2628569A00065726 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1040,7 +1056,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LF694Y87U;
 				INFOPLIST_FILE = NSOperation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1060,7 +1076,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LF694Y87U;
 				INFOPLIST_FILE = NSOperation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

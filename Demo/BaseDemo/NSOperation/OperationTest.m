@@ -149,17 +149,40 @@
 
 - (void)operationQueueTest {
     NSBlockOperation *blk1 = [NSBlockOperation blockOperationWithBlock:^{
+        sleep(10);
         NSLog(@"%@ | %s", [NSThread currentThread], __func__);
-        //sleep(10);
     }];
     NSBlockOperation *blk2 = [NSBlockOperation blockOperationWithBlock:^{
+        sleep(5);
         NSLog(@"%@ | %s", [NSThread currentThread], __func__);
-        //sleep(10);
     }];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    queue.maxConcurrentOperationCount = 1;
+    queue.maxConcurrentOperationCount = 2;
     [queue addOperation:blk1];
     [queue addOperation:blk2];
+    [blk1 waitUntilFinished];
+    [queue addOperationWithBlock:^{
+        NSLog(@"addOperationWithBlock:%@ | %s", [NSThread currentThread], __func__);
+    }];
+    [queue waitUntilAllOperationsAreFinished];
+    NSLog(@"waitUntilAllOperationsAreFinished: %@ | %s", [NSThread currentThread], __func__);
+}
+
+- (void)operationQueueSuspending {
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    queue.maxConcurrentOperationCount = 5;
+    for (int i = 1; i <= 20; i++) {
+        [queue addOperationWithBlock:^{
+            sleep(5);
+            NSLog(@"---- %d -- %@", i, [NSThread currentThread]);
+        }];
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [queue setSuspended:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [queue setSuspended:NO];
+        });
+    });
 }
 
 @end

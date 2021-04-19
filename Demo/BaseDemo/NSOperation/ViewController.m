@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "OperationTest.h"
+#import "ImageListViewController.h"
 
 @interface ViewController ()
 
@@ -23,10 +24,16 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     OperationTest *tester = [[OperationTest alloc] init];
 //    [tester operationQueueTest];
+    [tester operationQueueSuspending];
 //    [tester downloadOptTest];
-    [tester executionBlockTest];
+//    [tester executionBlockTest];
 //    [[[OperationTest alloc] init] blockTest];
 //    [OperationTest blockTest];
 }
+
+//- (void)showImageListPage {
+//    ImageListViewController *imageVC = [[ImageListViewController alloc] init];
+//    [self.navigationController pushViewController:imageVC animated:YES];
+//}
 
 @end
