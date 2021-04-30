@@ -51,11 +51,49 @@ void test_superclass() {
     
 }
 
+void test_class() {
+    NSObject *obj = [[NSObject alloc] init];
+    NSLog(@"%@", obj);
+}
+
+void test_pointer() {
+    int a = 20;    /* 实际变量的声明 */
+    int *b;        /* 指针变量的声明 */
+    b = &a;         /* 在指针变量中存储 a 的地址 */
+    printf("a 变量的地址: %p\n", &a  );
+    
+    // 普通
+    int x = 10;
+    int y = x;
+    NSLog(@"%d ----- %p", x, &x);
+    NSLog(@"%d ----- %p", y, &y);
+    
+    // 对象指针
+    NSObject *obj1 = [[NSObject alloc] init];
+    NSObject *obj2 = obj1;
+    NSLog(@"%@ ----- %p", obj1, &obj1);
+    NSLog(@"%@ ----- %p", obj2, &obj2);
+    
+    // 数组指针
+    int arr[4] = {1, 2, 3, 4};
+    int *arr2 = arr;
+    NSLog(@"%p ==== %p ==== %p", &arr, &arr[0], &arr[1]);
+    
+    // 偏移
+    for (int i = 0; i < 4; i++) {
+        int val = *(arr2 + i);
+        NSLog(@"---- %d", val);
+    }
+    
+    
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         NSLog(@"Hello, World!");
-        
+        test_pointer();
+        test_class();
         // class
         Person *p = [[Person alloc] init];
         NSLog(@"%@ %p", [p class], [p class]);
