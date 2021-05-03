@@ -47,6 +47,7 @@
 		AB85F883263FD0C7007A67DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F882263FD0C7007A67DF /* User.m */; };
 		AB85F88B263FF1A8007A67DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F88A263FF1A8007A67DF /* main.m */; };
 		AB85F891263FF1C5007A67DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F890263FF1C5007A67DF /* User.m */; };
+		AB85F89626400C33007A67DF /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F89526400C33007A67DF /* Man.m */; };
 		AB8C2DBF262D6C8D00790235 /* ImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */; };
 		AB8C2DCD262D6F3B00790235 /* ImageAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DCC262D6F3B00790235 /* ImageAssets.m */; };
 		AB8C2DDA262D6FD200790235 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8C2DD9262D6FD200790235 /* images.plist */; };
@@ -244,6 +245,10 @@
 		AB85F88F263FF1C5007A67DF /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		AB85F890263FF1C5007A67DF /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		AB85F892263FF223007A67DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AB85F8932640078C007A67DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AB85F89426400C33007A67DF /* Man.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		AB85F89526400C33007A67DF /* Man.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		AB85F89726400ED3007A67DF /* user.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = user.cpp; sourceTree = "<group>"; };
 		AB8C2DBD262D6C8D00790235 /* ImageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageListViewController.h; sourceTree = "<group>"; };
 		AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageListViewController.m; sourceTree = "<group>"; };
 		AB8C2DCB262D6F3B00790235 /* ImageAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAssets.h; sourceTree = "<group>"; };
@@ -279,7 +284,7 @@
 		ABDA8DD2253C458900B9BF70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABDA8DE0253C469000B9BF70 /* TestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
 		ABDA8DE1253C469000B9BF70 /* TestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
-		ABDA8DED253C4E5700B9BF70 /* Rumtime */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rumtime; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABDA8DED253C4E5700B9BF70 /* Runtime */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Runtime; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDA8DEF253C4E5700B9BF70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABF13D86263BDDBB00F23B2F /* Clang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF13D88263BDDBB00F23B2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -585,7 +590,7 @@
 				ABDA8DB8253C44FD00B9BF70 /* KVC */,
 				ABDA8DD1253C458900B9BF70 /* KVO */,
 				AB712ECF25484CA500DAEA37 /* NSThread */,
-				ABDA8DEE253C4E5700B9BF70 /* Rumtime */,
+				ABDA8DEE253C4E5700B9BF70 /* Runtime */,
 				AB712EB72548479100DAEA37 /* SyncMutable */,
 				ABADAB17254BFB6100EEB9D2 /* Property */,
 				AB5E506425616FF000D6EACA /* Notification */,
@@ -607,7 +612,7 @@
 				ABDA8DA8253C44E300B9BF70 /* BaseDemo */,
 				ABDA8DB7253C44FD00B9BF70 /* KVC */,
 				ABDA8DD0253C458900B9BF70 /* KVO */,
-				ABDA8DED253C4E5700B9BF70 /* Rumtime */,
+				ABDA8DED253C4E5700B9BF70 /* Runtime */,
 				AB712EB62548479100DAEA37 /* SyncMutable */,
 				AB712ECE25484CA500DAEA37 /* NSThread */,
 				ABADAB16254BFB6100EEB9D2 /* Property */,
@@ -653,14 +658,18 @@
 			path = KVO;
 			sourceTree = "<group>";
 		};
-		ABDA8DEE253C4E5700B9BF70 /* Rumtime */ = {
+		ABDA8DEE253C4E5700B9BF70 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
 				ABDA8DEF253C4E5700B9BF70 /* main.m */,
+				AB85F8932640078C007A67DF /* main.cpp */,
+				AB85F89426400C33007A67DF /* Man.h */,
+				AB85F89526400C33007A67DF /* Man.m */,
 				AB85F881263FD0C7007A67DF /* User.h */,
 				AB85F882263FD0C7007A67DF /* User.m */,
+				AB85F89726400ED3007A67DF /* user.cpp */,
 			);
-			path = Rumtime;
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 		ABF13D87263BDDBB00F23B2F /* Clang */ = {
@@ -926,9 +935,9 @@
 			productReference = ABDA8DD0253C458900B9BF70 /* KVO */;
 			productType = "com.apple.product-type.tool";
 		};
-		ABDA8DEC253C4E5700B9BF70 /* Rumtime */ = {
+		ABDA8DEC253C4E5700B9BF70 /* Runtime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABDA8DF1253C4E5700B9BF70 /* Build configuration list for PBXNativeTarget "Rumtime" */;
+			buildConfigurationList = ABDA8DF1253C4E5700B9BF70 /* Build configuration list for PBXNativeTarget "Runtime" */;
 			buildPhases = (
 				ABDA8DE9253C4E5700B9BF70 /* Sources */,
 				ABDA8DEA253C4E5700B9BF70 /* Frameworks */,
@@ -938,9 +947,9 @@
 			);
 			dependencies = (
 			);
-			name = Rumtime;
+			name = Runtime;
 			productName = Rumtime;
-			productReference = ABDA8DED253C4E5700B9BF70 /* Rumtime */;
+			productReference = ABDA8DED253C4E5700B9BF70 /* Runtime */;
 			productType = "com.apple.product-type.tool";
 		};
 		ABF13D85263BDDBB00F23B2F /* Clang */ = {
@@ -1035,7 +1044,7 @@
 				ABDA8DA7253C44E300B9BF70 /* BaseDemo */,
 				ABDA8DB6253C44FD00B9BF70 /* KVC */,
 				ABDA8DCF253C458900B9BF70 /* KVO */,
-				ABDA8DEC253C4E5700B9BF70 /* Rumtime */,
+				ABDA8DEC253C4E5700B9BF70 /* Runtime */,
 				AB712EB52548479100DAEA37 /* SyncMutable */,
 				AB712ECD25484CA500DAEA37 /* NSThread */,
 				ABADAB15254BFB6100EEB9D2 /* Property */,
@@ -1261,6 +1270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB85F89626400C33007A67DF /* Man.m in Sources */,
 				AB85F883263FD0C7007A67DF /* User.m in Sources */,
 				ABDA8DF0253C4E5700B9BF70 /* main.m in Sources */,
 			);
@@ -1888,6 +1898,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LF694Y87U;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1898,6 +1909,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LF694Y87U;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -2081,7 +2093,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABDA8DF1253C4E5700B9BF70 /* Build configuration list for PBXNativeTarget "Rumtime" */ = {
+		ABDA8DF1253C4E5700B9BF70 /* Build configuration list for PBXNativeTarget "Runtime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABDA8DF2253C4E5700B9BF70 /* Debug */,
