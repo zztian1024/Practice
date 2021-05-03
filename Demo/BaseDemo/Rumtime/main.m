@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
+#import "User.h"
 
 /// Runtime 知识点
 /// 1、消息机制
@@ -16,9 +18,45 @@
 /// 6、字典转模型KVC
 ///
 
+void getInstanceMethod(Class cls) {
+    unsigned int count = 0;
+    Method *methods = class_copyMethodList(cls, &count);
+    
+    for (unsigned int i = 0; i < count; i++) {
+        Method const method = methods[i];
+        NSString *key = NSStringFromSelector(method_getName(method));
+        NSLog(@"%@\n", key);
+    }
+    free(methods);
+}
+
+void getClassMethod(Class cls) {
+    getInstanceMethod(object_getClass(cls));
+}
+
+void geIMPMetaClass(Class cls) {
+    const char *clsName = class_getName(cls);
+    // 其实直接传入 类对象，用object_getClass 方法得到的即是元类对象
+    Class metaCls = objc_getMetaClass(clsName);
+    SEL sayHello = @selector(sayHello);
+    IMP sayHelloImp = class_getMethodImplementation(metaCls, sayHello);
+    BOOL (* sayHelloFunc)(id, SEL) = (void *)sayHelloImp;
+    sayHelloFunc(metaCls, sayHello);
+
+    id user = [cls new];
+    SEL run = @selector(run);
+    IMP runImp = class_getMethodImplementation(cls, run);
+    BOOL (* runFunc)(id, SEL) = (void *)runImp;
+    runFunc(user, run);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
+        getInstanceMethod(User.class);
+        printf("-------------\n");
+        getClassMethod(User.class);
+        printf("-------------\n");
+        geIMPMetaClass(User.class);
     }
     return 0;
 }
