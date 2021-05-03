@@ -48,6 +48,9 @@
 		AB85F88B263FF1A8007A67DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F88A263FF1A8007A67DF /* main.m */; };
 		AB85F891263FF1C5007A67DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F890263FF1C5007A67DF /* User.m */; };
 		AB85F89626400C33007A67DF /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F89526400C33007A67DF /* Man.m */; };
+		AB85F89F26403729007A67DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F89E26403729007A67DF /* main.m */; };
+		AB85F8A52640373D007A67DF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F8A42640373D007A67DF /* Person.m */; };
+		AB85F8A926403CE9007A67DF /* NSObject+Protection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F8A726403CDF007A67DF /* NSObject+Protection.m */; };
 		AB8C2DBF262D6C8D00790235 /* ImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */; };
 		AB8C2DCD262D6F3B00790235 /* ImageAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DCC262D6F3B00790235 /* ImageAssets.m */; };
 		AB8C2DDA262D6FD200790235 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8C2DD9262D6FD200790235 /* images.plist */; };
@@ -107,6 +110,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		AB85F886263FF1A8007A67DF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AB85F89A26403729007A67DF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -249,6 +261,12 @@
 		AB85F89426400C33007A67DF /* Man.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		AB85F89526400C33007A67DF /* Man.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
 		AB85F89726400ED3007A67DF /* user.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = user.cpp; sourceTree = "<group>"; };
+		AB85F89C26403729007A67DF /* Message */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Message; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB85F89E26403729007A67DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB85F8A32640373D007A67DF /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		AB85F8A42640373D007A67DF /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		AB85F8A626403CDF007A67DF /* NSObject+Protection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Protection.h"; sourceTree = "<group>"; };
+		AB85F8A726403CDF007A67DF /* NSObject+Protection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Protection.m"; sourceTree = "<group>"; };
 		AB8C2DBD262D6C8D00790235 /* ImageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageListViewController.h; sourceTree = "<group>"; };
 		AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageListViewController.m; sourceTree = "<group>"; };
 		AB8C2DCB262D6F3B00790235 /* ImageAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAssets.h; sourceTree = "<group>"; };
@@ -356,6 +374,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AB85F885263FF1A8007A67DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB85F89926403729007A67DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -545,6 +570,18 @@
 			path = Weak;
 			sourceTree = "<group>";
 		};
+		AB85F89D26403729007A67DF /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				AB85F89E26403729007A67DF /* main.m */,
+				AB85F8A626403CDF007A67DF /* NSObject+Protection.h */,
+				AB85F8A726403CDF007A67DF /* NSObject+Protection.m */,
+				AB85F8A32640373D007A67DF /* Person.h */,
+				AB85F8A42640373D007A67DF /* Person.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		ABAD8DED2631D07D00C71E42 /* Objc */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +639,7 @@
 				AB5A3CFB26359457002E8523 /* LLDB */,
 				ABF13D87263BDDBB00F23B2F /* Clang */,
 				AB85F889263FF1A8007A67DF /* Weak */,
+				AB85F89D26403729007A67DF /* Message */,
 				ABDA8DA9253C44E300B9BF70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -625,6 +663,7 @@
 				AB5A3CFA26359457002E8523 /* LLDB */,
 				ABF13D86263BDDBB00F23B2F /* Clang.app */,
 				AB85F888263FF1A8007A67DF /* Weak */,
+				AB85F89C26403729007A67DF /* Message */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -833,6 +872,23 @@
 			productReference = AB85F888263FF1A8007A67DF /* Weak */;
 			productType = "com.apple.product-type.tool";
 		};
+		AB85F89B26403729007A67DF /* Message */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB85F8A026403729007A67DF /* Build configuration list for PBXNativeTarget "Message" */;
+			buildPhases = (
+				AB85F89826403729007A67DF /* Sources */,
+				AB85F89926403729007A67DF /* Frameworks */,
+				AB85F89A26403729007A67DF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Message;
+			productName = Message;
+			productReference = AB85F89C26403729007A67DF /* Message */;
+			productType = "com.apple.product-type.tool";
+		};
 		ABAD8DEB2631D07C00C71E42 /* Objc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABAD8DF22631D07D00C71E42 /* Build configuration list for PBXNativeTarget "Objc" */;
@@ -1002,6 +1058,9 @@
 					AB85F887263FF1A8007A67DF = {
 						CreatedOnToolsVersion = 12.5;
 					};
+					AB85F89B26403729007A67DF = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					ABAD8DEB2631D07C00C71E42 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -1057,6 +1116,7 @@
 				AB5A3CF926359457002E8523 /* LLDB */,
 				ABF13D85263BDDBB00F23B2F /* Clang */,
 				AB85F887263FF1A8007A67DF /* Weak */,
+				AB85F89B26403729007A67DF /* Message */,
 			);
 		};
 /* End PBXProject section */
@@ -1208,6 +1268,16 @@
 			files = (
 				AB85F891263FF1C5007A67DF /* User.m in Sources */,
 				AB85F88B263FF1A8007A67DF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB85F89826403729007A67DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB85F8A52640373D007A67DF /* Person.m in Sources */,
+				AB85F8A926403CE9007A67DF /* NSObject+Protection.m in Sources */,
+				AB85F89F26403729007A67DF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1638,6 +1708,28 @@
 			};
 			name = Release;
 		};
+		AB85F8A126403729007A67DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LF694Y87U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AB85F8A226403729007A67DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LF694Y87U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ABAD8DF02631D07D00C71E42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2026,6 +2118,15 @@
 			buildConfigurations = (
 				AB85F88D263FF1A8007A67DF /* Debug */,
 				AB85F88E263FF1A8007A67DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB85F8A026403729007A67DF /* Build configuration list for PBXNativeTarget "Message" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB85F8A126403729007A67DF /* Debug */,
+				AB85F8A226403729007A67DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
