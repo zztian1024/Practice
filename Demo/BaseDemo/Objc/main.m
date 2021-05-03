@@ -88,10 +88,35 @@ void test_pointer() {
     
 }
 
+void isKindofClass_memberOfClass() {
+    BOOL res1 = [[NSObject class] isKindOfClass:[NSObject class]];      // 1: 1, 元类 vs 类
+    BOOL res2 = [[NSObject class] isMemberOfClass:[NSObject class]];    // 2: 0,
+    BOOL res3 = [[Man class] isKindOfClass:[Person class]];             // 3: 0, 元类 vs 类
+    BOOL res4 = [[Man class] isMemberOfClass:[Person class]];           // 4: 0,
+    
+    Man *man = [Man new];
+    NSObject *obj = [NSObject new];
+    BOOL res5 = [obj isKindOfClass:[NSObject class]];                   // 5: 1, 同类
+    BOOL res6 = [obj isMemberOfClass:[NSObject class]];                 // 6: 1, 同类
+    BOOL res7 = [man isMemberOfClass:[Person class]];                   // 7: 0, 子类
+    BOOL res8 = [man isKindOfClass:[Person class]];                     // 8: 1, 子类
+    BOOL res9 = [man isMemberOfClass:[Man class]];                      // 9: 1, 同类
+    NSLog(@"1: %d", res1);
+    NSLog(@"2: %d", res2);
+    NSLog(@"3: %d", res3);
+    NSLog(@"4: %d", res4);
+    NSLog(@"5: %d", res5);
+    NSLog(@"6: %d", res6);
+    NSLog(@"7: %d", res7);
+    NSLog(@"8: %d", res8);
+    NSLog(@"9: %d", res9);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         NSLog(@"Hello, World!");
+        isKindofClass_memberOfClass();
         test_pointer();
         test_class();
         // class
