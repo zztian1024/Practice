@@ -43,7 +43,7 @@ void geIMPMetaClass(Class cls) {
     IMP sayHelloImp = class_getMethodImplementation(metaCls, sayHello);
     BOOL (* sayHelloFunc)(id, SEL) = (void *)sayHelloImp;
     sayHelloFunc(metaCls, sayHello);
-
+    
     id user = [cls new];
     SEL run = @selector(run);
     IMP runImp = class_getMethodImplementation(cls, run);
@@ -51,8 +51,30 @@ void geIMPMetaClass(Class cls) {
     runFunc(user, run);
 }
 
+void add_property(Class targetClass, NSString *propertyName) {
+    objc_property_attribute_t type = { "T", [[NSString stringWithFormat:@"@\"%@\"",NSStringFromClass([NSString class])] UTF8String] }; //type
+    objc_property_attribute_t ownership0 = { "C", "" }; // C = copy
+    objc_property_attribute_t ownership = { "N", "" }; //N = nonatomic
+    objc_property_attribute_t backingivar  = { "V", [[NSString stringWithFormat:@"_%@", propertyName] UTF8String] };  //variable name
+    objc_property_attribute_t attrs[] = { type, ownership0, ownership, backingivar };
+    if (class_addProperty(targetClass, [propertyName UTF8String], attrs, 4)) {
+        //添加get和set方法
+        //[targetClass add:propertyName];
+        NSLog(@"创建属性Property成功");
+    }
+}
+
+void create_cls() {
+    // 创建类
+    Class Admin = objc_allocateClassPair([User class], "Admin", 0);
+    class_addIvar(Admin, "role", sizeof(NSString *), log2(sizeof(NSString *)), "@");
+    objc_registerClassPair(Admin);
+    add_property(Admin, @"gender");
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        create_cls();
         getInstanceMethod(User.class);
         printf("-------------\n");
         getClassMethod(User.class);
