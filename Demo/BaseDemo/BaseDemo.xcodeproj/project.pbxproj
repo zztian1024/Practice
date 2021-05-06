@@ -68,6 +68,7 @@
 		AB85F9382644019D007A67DF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F9372644019D007A67DF /* Person.m */; };
 		AB85F9402644093D007A67DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F93F2644093D007A67DF /* main.m */; };
 		AB85F946264424A5007A67DF /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F945264424A5007A67DF /* UserModel.m */; };
+		AB85F94926443AF0007A67DF /* UIControl+ClickInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F94826443AF0007A67DF /* UIControl+ClickInterval.m */; };
 		AB8C2DBF262D6C8D00790235 /* ImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */; };
 		AB8C2DCD262D6F3B00790235 /* ImageAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DCC262D6F3B00790235 /* ImageAssets.m */; };
 		AB8C2DDA262D6FD200790235 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8C2DD9262D6FD200790235 /* images.plist */; };
@@ -353,6 +354,8 @@
 		AB85F93F2644093D007A67DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB85F944264424A5007A67DF /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = Weak/UserModel.h; sourceTree = SOURCE_ROOT; };
 		AB85F945264424A5007A67DF /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = Weak/UserModel.m; sourceTree = SOURCE_ROOT; };
+		AB85F94726443AF0007A67DF /* UIControl+ClickInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickInterval.h"; sourceTree = "<group>"; };
+		AB85F94826443AF0007A67DF /* UIControl+ClickInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ClickInterval.m"; sourceTree = "<group>"; };
 		AB8C2DBD262D6C8D00790235 /* ImageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageListViewController.h; sourceTree = "<group>"; };
 		AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageListViewController.m; sourceTree = "<group>"; };
 		AB8C2DCB262D6F3B00790235 /* ImageAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAssets.h; sourceTree = "<group>"; };
@@ -795,6 +798,8 @@
 				ABBBC70B2578D5FE00461380 /* SceneDelegate.m */,
 				ABBBC70D2578D5FE00461380 /* ViewController.h */,
 				ABBBC70E2578D5FE00461380 /* ViewController.m */,
+				AB85F94726443AF0007A67DF /* UIControl+ClickInterval.h */,
+				AB85F94826443AF0007A67DF /* UIControl+ClickInterval.m */,
 				ABBBC7102578D5FE00461380 /* Main.storyboard */,
 				ABBBC7132578D5FF00461380 /* Assets.xcassets */,
 				ABBBC7152578D5FF00461380 /* LaunchScreen.storyboard */,
@@ -1663,6 +1668,7 @@
 			files = (
 				ABBBC70F2578D5FE00461380 /* ViewController.m in Sources */,
 				ABBBC7092578D5FE00461380 /* AppDelegate.m in Sources */,
+				AB85F94926443AF0007A67DF /* UIControl+ClickInterval.m in Sources */,
 				ABBBC71A2578D5FF00461380 /* main.m in Sources */,
 				ABBBC70C2578D5FE00461380 /* SceneDelegate.m in Sources */,
 			);
@@ -2283,7 +2289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LF694Y87U;
 				INFOPLIST_FILE = AOP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2303,7 +2309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LF694Y87U;
 				INFOPLIST_FILE = AOP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

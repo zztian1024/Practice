@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import <objc/runtime.h>
+#import "UIControl+ClickInterval.h"
 
 @interface ViewController ()
 
@@ -66,6 +67,10 @@
 - (void)viewDidLoad_swizzle {
     NSLog(@"---------viewDidLoad_swizzle");
     [self viewDidLoad_swizzle];
+    [UIControl ci_exchangeClickMethod];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+}
 @end
