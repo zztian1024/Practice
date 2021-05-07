@@ -8,7 +8,18 @@
 #import "TestClass.h"
 
 @implementation Person
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+//    if ([key isEqualToString:@"name"]) {
+//        return NO;
+//    }
+    return [super automaticallyNotifiesObserversForKey:key];
+}
 
+- (void)setName:(NSString *)name {
+    [self willChangeValueForKey:@"name"];
+    _name = name;
+    [self didChangeValueForKey:@"name"];
+}
 @end
 
 @implementation TestClass

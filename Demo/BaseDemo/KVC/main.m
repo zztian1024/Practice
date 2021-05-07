@@ -17,6 +17,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Person *p = [Person new];
+        p.name = @"ABC";
         p.toy = [Toy new];
         p->_age = 20;
         // KVC 赋值

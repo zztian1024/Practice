@@ -70,6 +70,10 @@
 		AB85F946264424A5007A67DF /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F945264424A5007A67DF /* UserModel.m */; };
 		AB85F94926443AF0007A67DF /* UIControl+ClickInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F94826443AF0007A67DF /* UIControl+ClickInterval.m */; };
 		AB85F94C2644CBFF007A67DF /* NSObject+ValueCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F94B2644CBFF007A67DF /* NSObject+ValueCoding.m */; };
+		AB85F9542644F973007A67DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F9532644F973007A67DF /* main.m */; };
+		AB85F95A264500D1007A67DF /* CycleObj.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F959264500D1007A67DF /* CycleObj.m */; };
+		AB85F95D26450850007A67DF /* ZYProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85F95C26450850007A67DF /* ZYProxy.m */; };
+		AB85F95F26450A3A007A67DF /* testBlock.c in Sources */ = {isa = PBXBuildFile; fileRef = AB85F95E26450A3A007A67DF /* testBlock.c */; };
 		AB8C2DBF262D6C8D00790235 /* ImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */; };
 		AB8C2DCD262D6F3B00790235 /* ImageAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8C2DCC262D6F3B00790235 /* ImageAssets.m */; };
 		AB8C2DDA262D6FD200790235 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8C2DD9262D6FD200790235 /* images.plist */; };
@@ -174,6 +178,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		AB85F93B2644093C007A67DF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AB85F94F2644F973007A67DF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -359,6 +372,15 @@
 		AB85F94826443AF0007A67DF /* UIControl+ClickInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ClickInterval.m"; sourceTree = "<group>"; };
 		AB85F94A2644CBFF007A67DF /* NSObject+ValueCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ValueCoding.h"; sourceTree = "<group>"; };
 		AB85F94B2644CBFF007A67DF /* NSObject+ValueCoding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ValueCoding.m"; sourceTree = "<group>"; };
+		AB85F9512644F973007A67DF /* Block */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Block; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB85F9532644F973007A67DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB85F958264500D1007A67DF /* CycleObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CycleObj.h; sourceTree = "<group>"; };
+		AB85F959264500D1007A67DF /* CycleObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleObj.m; sourceTree = "<group>"; };
+		AB85F95B26450850007A67DF /* ZYProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYProxy.h; sourceTree = "<group>"; };
+		AB85F95C26450850007A67DF /* ZYProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYProxy.m; sourceTree = "<group>"; };
+		AB85F95E26450A3A007A67DF /* testBlock.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = testBlock.c; sourceTree = "<group>"; };
+		AB85F96026450AC1007A67DF /* testBlock1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testBlock1.cpp; sourceTree = "<group>"; };
+		AB85F96126450D9A007A67DF /* testBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testBlock.cpp; sourceTree = "<group>"; };
 		AB8C2DBD262D6C8D00790235 /* ImageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageListViewController.h; sourceTree = "<group>"; };
 		AB8C2DBE262D6C8D00790235 /* ImageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageListViewController.m; sourceTree = "<group>"; };
 		AB8C2DCB262D6F3B00790235 /* ImageAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageAssets.h; sourceTree = "<group>"; };
@@ -508,6 +530,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AB85F93A2644093C007A67DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB85F94E2644F973007A67DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -772,6 +801,21 @@
 			path = weak;
 			sourceTree = "<group>";
 		};
+		AB85F9522644F973007A67DF /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				AB85F9532644F973007A67DF /* main.m */,
+				AB85F958264500D1007A67DF /* CycleObj.h */,
+				AB85F959264500D1007A67DF /* CycleObj.m */,
+				AB85F95B26450850007A67DF /* ZYProxy.h */,
+				AB85F95C26450850007A67DF /* ZYProxy.m */,
+				AB85F95E26450A3A007A67DF /* testBlock.c */,
+				AB85F96026450AC1007A67DF /* testBlock1.cpp */,
+				AB85F96126450D9A007A67DF /* testBlock.cpp */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
 		ABAD8DED2631D07D00C71E42 /* Objc */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +881,7 @@
 				AB85F8CE2642AC23007A67DF /* Category */,
 				AB85F91E2644010C007A67DF /* Clazz */,
 				AB85F93E2644093D007A67DF /* weak */,
+				AB85F9522644F973007A67DF /* Block */,
 				ABDA8DA9253C44E300B9BF70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -866,6 +911,7 @@
 				AB85F8CD2642AC23007A67DF /* Category */,
 				AB85F91D2644010C007A67DF /* Clazz.app */,
 				AB85F93D2644093C007A67DF /* weak */,
+				AB85F9512644F973007A67DF /* Block */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1178,6 +1224,23 @@
 			productReference = AB85F93D2644093C007A67DF /* weak */;
 			productType = "com.apple.product-type.tool";
 		};
+		AB85F9502644F973007A67DF /* Block */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB85F9552644F973007A67DF /* Build configuration list for PBXNativeTarget "Block" */;
+			buildPhases = (
+				AB85F94D2644F973007A67DF /* Sources */,
+				AB85F94E2644F973007A67DF /* Frameworks */,
+				AB85F94F2644F973007A67DF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Block;
+			productName = Block;
+			productReference = AB85F9512644F973007A67DF /* Block */;
+			productType = "com.apple.product-type.tool";
+		};
 		ABAD8DEB2631D07C00C71E42 /* Objc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABAD8DF22631D07D00C71E42 /* Build configuration list for PBXNativeTarget "Objc" */;
@@ -1365,6 +1428,9 @@
 					AB85F93C2644093C007A67DF = {
 						CreatedOnToolsVersion = 12.5;
 					};
+					AB85F9502644F973007A67DF = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					ABAD8DEB2631D07C00C71E42 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -1426,6 +1492,7 @@
 				AB85F8CC2642AC23007A67DF /* Category */,
 				AB85F91C2644010C007A67DF /* Clazz */,
 				AB85F93C2644093C007A67DF /* weak */,
+				AB85F9502644F973007A67DF /* Block */,
 			);
 		};
 /* End PBXProject section */
@@ -1646,6 +1713,17 @@
 			files = (
 				AB85F946264424A5007A67DF /* UserModel.m in Sources */,
 				AB85F9402644093D007A67DF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB85F94D2644F973007A67DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB85F95D26450850007A67DF /* ZYProxy.m in Sources */,
+				AB85F95A264500D1007A67DF /* CycleObj.m in Sources */,
+				AB85F9542644F973007A67DF /* main.m in Sources */,
+				AB85F95F26450A3A007A67DF /* testBlock.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2245,6 +2323,28 @@
 			};
 			name = Release;
 		};
+		AB85F9562644F973007A67DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LF694Y87U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AB85F9572644F973007A67DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LF694Y87U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ABAD8DF02631D07D00C71E42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2687,6 +2787,15 @@
 			buildConfigurations = (
 				AB85F9422644093D007A67DF /* Debug */,
 				AB85F9432644093D007A67DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB85F9552644F973007A67DF /* Build configuration list for PBXNativeTarget "Block" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB85F9562644F973007A67DF /* Debug */,
+				AB85F9572644F973007A67DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -20,10 +20,12 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self testApply];
-//    [self testBarrier];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self testBarrier];
+    });
 //    [self testGroup2];
 //    [self testGroup3];
-    [self testSemaphore];
+//    [self testSemaphore];
 }
 
 - (void)testApply {
@@ -42,18 +44,27 @@
         NSLog(@"___ read1 ___ %ld", flag);
     });
     dispatch_async(queue, ^{
+        sleep(2);
         NSLog(@"___ read2 ___ %ld", flag);
     });
-    dispatch_barrier_async(queue, ^{
+    
+    dispatch_async(queue, ^{
+        NSLog(@"___ read22 ___ %ld", flag);
+    });
+    NSLog(@"-----------before-------------");
+    dispatch_barrier_sync(queue, ^{
         flag = 1;
+        sleep(4);
         NSLog(@"___ write ___ flag:%ld", flag);
     });
+    NSLog(@"-----------after-------------");
     dispatch_async(queue, ^{
         NSLog(@"___ read3 ___ %ld", flag);
     });
     dispatch_async(queue, ^{
         NSLog(@"___ read4 ___ %ld", flag);
     });
+    NSLog(@"-----------finish-------------");
 }
 
 
