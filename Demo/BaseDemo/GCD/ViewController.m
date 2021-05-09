@@ -58,6 +58,9 @@
         NSLog(@"___ write ___ flag:%ld", flag);
     });
     NSLog(@"-----------after-------------");
+    dispatch_sync(queue, ^{
+        NSLog(@"___ sync___ %ld", flag);
+    });
     dispatch_async(queue, ^{
         NSLog(@"___ read3 ___ %ld", flag);
     });

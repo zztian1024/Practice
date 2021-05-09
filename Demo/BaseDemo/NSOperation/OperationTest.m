@@ -155,6 +155,9 @@
     NSBlockOperation *blk2 = [NSBlockOperation blockOperationWithBlock:^{
         sleep(5);
         NSLog(@"%@ | %s", [NSThread currentThread], __func__);
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSLog(@"%@", [NSOperationQueue currentQueue]);
+        }];
     }];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     queue.maxConcurrentOperationCount = 2;
