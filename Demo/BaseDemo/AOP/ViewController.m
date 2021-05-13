@@ -22,6 +22,8 @@
     NSLog(@"---------init");
     return self;
 }
+- (IBAction)testFileRead:(id)sender {
+}
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     if (self = [super initWithCoder:coder]) {
