@@ -73,75 +73,75 @@
     
     OSStatus status;
     if (value) {
-        NSMutableDictionary *attributesToUpdate = [NSMutableDictionary dictionary];
-        [attributesToUpdate setObject:value forKey:[FBSDKDynamicFrameworkLoader loadkSecValueData]];
-        
-        status = fbsdkdfl_SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
-        if (status == errSecItemNotFound) {
-#if !TARGET_OS_TV
-            if (@available(macOS 10.9, iOS 8, *)) {
-                if (accessibility) {
-                    [query setObject:(__bridge id)(accessibility) forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrAccessible]];
-                }
-            }
-#endif
-            [query setObject:value forKey:[FBSDKDynamicFrameworkLoader loadkSecValueData]];
-            
-            status = fbsdkdfl_SecItemAdd((__bridge CFDictionaryRef)query, NULL);
-        }
-    } else {
-        status = fbsdkdfl_SecItemDelete((__bridge CFDictionaryRef)query);
-        if (status == errSecItemNotFound) {
-            status = errSecSuccess;
-        }
+//        NSMutableDictionary *attributesToUpdate = [NSMutableDictionary dictionary];
+//        [attributesToUpdate setObject:value forKey:[FBSDKDynamicFrameworkLoader loadkSecValueData]];
+//
+//        status = fbsdkdfl_SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
+//        if (status == errSecItemNotFound) {
+//#if !TARGET_OS_TV
+//            if (@available(macOS 10.9, iOS 8, *)) {
+//                if (accessibility) {
+//                    [query setObject:(__bridge id)(accessibility) forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrAccessible]];
+//                }
+//            }
+//#endif
+//            [query setObject:value forKey:[FBSDKDynamicFrameworkLoader loadkSecValueData]];
+//
+//            status = fbsdkdfl_SecItemAdd((__bridge CFDictionaryRef)query, NULL);
+//        }
+//    } else {
+//        status = fbsdkdfl_SecItemDelete((__bridge CFDictionaryRef)query);
+//        if (status == errSecItemNotFound) {
+//            status = errSecSuccess;
+//        }
     }
     
     return (status == errSecSuccess);
 #endif
 }
 
-- (NSData *)dataForKey:(NSString *)key {
-    if (!key) {
-        return nil;
-    }
-    
-#if TARGET_OS_SIMULATOR
-//    [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorInformational
-//                           logEntry:@"Falling back to loading access token from NSUserDefaults because of simulator bug"];
-    return [[NSUserDefaults standardUserDefaults] dataForKey:key];
-#else
-    NSMutableDictionary *query = [self queryForKey:key];
-    [query setObject:(id)kCFBooleanTrue forKey:[FBSDKDynamicFrameworkLoader loadkSecReturnData]];
-    [query setObject:[FBSDKDynamicFrameworkLoader loadkSecMatchLimitOne] forKey:[FBSDKDynamicFrameworkLoader loadkSecMatchLimit]];
-    
-    CFTypeRef data = nil;
-    OSStatus status = fbsdkdfl_SecItemCopyMatching((__bridge CFDictionaryRef)query, &data);
-    if (status != errSecSuccess) {
-        return nil;
-    }
-    
-    if (!data || CFGetTypeID(data) != CFDataGetTypeID()) {
-        return nil;
-    }
-    
-    NSData *ret = [NSData dataWithData:(__bridge NSData *)(data)];
-    CFRelease(data);
-    
-    return ret;
-#endif
-}
+//- (NSData *)dataForKey:(NSString *)key {
+//    if (!key) {
+//        return nil;
+//    }
+//
+//#if TARGET_OS_SIMULATOR
+////    [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorInformational
+////                           logEntry:@"Falling back to loading access token from NSUserDefaults because of simulator bug"];
+//    return [[NSUserDefaults standardUserDefaults] dataForKey:key];
+//#else
+//    NSMutableDictionary *query = [self queryForKey:key];
+//    [query setObject:(id)kCFBooleanTrue forKey:[FBSDKDynamicFrameworkLoader loadkSecReturnData]];
+//    [query setObject:[FBSDKDynamicFrameworkLoader loadkSecMatchLimitOne] forKey:[FBSDKDynamicFrameworkLoader loadkSecMatchLimit]];
+//
+//    CFTypeRef data = nil;
+//    OSStatus status = fbsdkdfl_SecItemCopyMatching((__bridge CFDictionaryRef)query, &data);
+//    if (status != errSecSuccess) {
+//        return nil;
+//    }
+//
+//    if (!data || CFGetTypeID(data) != CFDataGetTypeID()) {
+//        return nil;
+//    }
+//
+//    NSData *ret = [NSData dataWithData:(__bridge NSData *)(data)];
+//    CFRelease(data);
+//
+//    return ret;
+//#endif
+//}
 
-- (NSMutableDictionary *)queryForKey:(NSString *)key {
-    NSMutableDictionary *query = [NSMutableDictionary dictionary];
-//    [query safe_setObject:[FBSDKDynamicFrameworkLoader loadkSecClassGenericPassword] forKey:[FBSDKDynamicFrameworkLoader loadkSecClass]];
-//    [query safe_setObject:_service forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrService]];
-//    [query safe_setObject:key forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrAccount]];
-#if !TARGET_IPHONE_SIMULATOR
-    if (_accessGroup) {
-        [query setObject:_accessGroup forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrAccessGroup]];
-    }
-#endif
-    
-    return query;
-}
+//- (NSMutableDictionary *)queryForKey:(NSString *)key {
+//    NSMutableDictionary *query = [NSMutableDictionary dictionary];
+////    [query safe_setObject:[FBSDKDynamicFrameworkLoader loadkSecClassGenericPassword] forKey:[FBSDKDynamicFrameworkLoader loadkSecClass]];
+////    [query safe_setObject:_service forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrService]];
+////    [query safe_setObject:key forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrAccount]];
+//#if !TARGET_IPHONE_SIMULATOR
+//    if (_accessGroup) {
+//        [query setObject:_accessGroup forKey:[FBSDKDynamicFrameworkLoader loadkSecAttrAccessGroup]];
+//    }
+//#endif
+//    
+//    return query;
+//}
 @end

@@ -90,16 +90,16 @@ static const u_int FB_GIGABYTE = 1024 * 1024 * 1024; // bytes
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-+ (NSString *)getCarrier {
-#if TARGET_OS_TV || TARGET_IPHONE_SIMULATOR
-    return @"NoCarrier";
-#else
-    // Dynamically load class for this so calling app doesn't need to link framework in.
-    CTTelephonyNetworkInfo *networkInfo = [[nwsdkdfl_CTTelephonyNetworkInfoClass() alloc] init];
-    CTCarrier *carrier = networkInfo.subscriberCellularProvider;
-    return carrier.carrierName ?: @"NoCarrier";
-#endif
-}
+//+ (NSString *)getCarrier {
+//#if TARGET_OS_TV || TARGET_IPHONE_SIMULATOR
+//    return @"NoCarrier";
+//#else
+//    // Dynamically load class for this so calling app doesn't need to link framework in.
+//    CTTelephonyNetworkInfo *networkInfo = [[nwsdkdfl_CTTelephonyNetworkInfoClass() alloc] init];
+//    CTCarrier *carrier = networkInfo.subscriberCellularProvider;
+//    return carrier.carrierName ?: @"NoCarrier";
+//#endif
+//}
 
 #pragma clang diagnostic pop
 

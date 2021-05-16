@@ -24,10 +24,29 @@
     _queue = dispatch_queue_create("com.file.test", DISPATCH_QUEUE_CONCURRENT);
 }
 
+- (id)getArray {
+    int a = 10;
+    return [NSArray arrayWithObjects:^{
+        NSLog(@"%d", a);
+    },^{
+        NSLog(@"%d", a);
+    }, nil];
+}
+
+- (void)testBlock {
+    NSArray *arr = [self getArray];
+    void (^block)(void) = [arr objectAtIndex:1];
+    block();
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+}
+
 - (IBAction)testFileRead:(id)sender {
     
 //    [self testPthread];
-    [self testBarri];
+//    [self testBarri];
 }
 
 - (void)testPthread {
