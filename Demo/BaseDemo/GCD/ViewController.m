@@ -19,13 +19,48 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self testAsyncQueue];
+//    [self testPerformAndQueue];
 //    [self testApply];
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [self testBarrier];
-    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [self testBarrier];
+//    });
 //    [self testGroup2];
 //    [self testGroup3];
 //    [self testSemaphore];
+//    [self testSemaphore2];
+}
+
+- (void)testAsyncQueue {
+    dispatch_queue_t queue = dispatch_queue_create("testqueue", NULL);
+    dispatch_async(queue, ^{
+        NSLog(@"___dispatch_async 1");
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"___dispatch_async 2");
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"___dispatch_async 3");
+    });
+}
+
+- (void)testPerformAndQueue {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"___ dispatch_get_main_queue");
+    });
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"___dispatch_async dispatch_get_global_queue");
+    });
+    dispatch_sync(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"___dispatch_sync dispatch_get_global_queue");
+    });
+    dispatch_queue_t queue = dispatch_queue_create("testqueue", NULL);
+    dispatch_async(queue, ^{
+        NSLog(@"___dispatch_async dispatch_queue_create");
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"___dispatch_sync dispatch_queue_create");
+    });
 }
 
 - (void)testApply {
@@ -174,8 +209,8 @@
     dispatch_async(queue, ^{
         NSLog(@"任务1:%@",[NSThread currentThread]);
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            dispatch_semaphore_signal(sem);
             [NSThread sleepForTimeInterval:20];
+            dispatch_semaphore_signal(sem);
         });
     });
      
@@ -184,7 +219,7 @@
     dispatch_async(queue, ^{
         NSLog(@"任务2:%@",[NSThread currentThread]);
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [NSThread sleepForTimeInterval:1];
+            [NSThread sleepForTimeInterval:5];
             dispatch_semaphore_signal(sem);
         });
     });
@@ -194,4 +229,34 @@
         NSLog(@"任务3:%@",[NSThread currentThread]);
     });
 }
+- (void)testSemaphore2 {
+    // A,b,c, 异步执行，A B 之后 d, ABC 之后 E
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    dispatch_queue_t queue = dispatch_queue_create("myqueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        NSLog(@"任务A:%@",[NSThread currentThread]);
+        [NSThread sleepForTimeInterval:3];
+        dispatch_semaphore_signal(sem);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"任务B:%@",[NSThread currentThread]);
+        [NSThread sleepForTimeInterval:10];
+        dispatch_semaphore_signal(sem);
+    });
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    dispatch_async(queue, ^{
+        NSLog(@"任务D:%@",[NSThread currentThread]);
+        //[NSThread sleepForTimeInterval:3];
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"任务C:%@",[NSThread currentThread]);
+        [NSThread sleepForTimeInterval:3];
+    });
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    dispatch_async(queue, ^{
+        NSLog(@"任务E:%@",[NSThread currentThread]);
+        //[NSThread sleepForTimeInterval:3];
+    });
+}
+
 @end
